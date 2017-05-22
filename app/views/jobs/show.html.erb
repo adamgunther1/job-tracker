@@ -18,5 +18,8 @@ Category: <%= @job.category.title %>
 
 <%= link_to "Update Job", edit_company_job_path(@job.company, @job) %>
 <br>
-
+<h5>Comments</h5>
+<%= render partial: 'comments/form' %>
+<%= render partial: 'companies/comment', collection: @job.comments.reverse %>
+<br>
 <%= link_to "Delete Job", company_job_path(@job.company, @job), method: "delete" %>
