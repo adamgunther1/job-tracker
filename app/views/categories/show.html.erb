@@ -1,0 +1,9 @@
+<h2>Category: <%= @category.title %></h2>
+<br>
+<% @category.jobs.each do |job| %>
+  <ul><%= link_to job.title, company_job_path(job.company, job) %> @ <%= link_to job.company.name, company_path(job.company) %></ul>
+<% end %>
+<br>
+<%= link_to "Delete", category_path(@category), method: "delete" %>
+<br><br>
+<%= link_to "All Categories", categories_path %>
